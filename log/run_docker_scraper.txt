@@ -1,0 +1,666 @@
+poetry run python src/docker_scraper.py
+[+] Searching for keyword: krakend
+[+] Searching for keyword: api-firewall
+[+] Searching for keyword: clickhouse
+[+] Searching for keyword: liquibase
+[+] Searching for keyword: scratch
+[+] Searching for keyword: satosa
+[+] Searching for keyword: hipache
+[+] Searching for keyword: hitch
+    Found 23 matching repos.
+[+] Searching for keyword: sl
+    Found 41 matching repos.
+[+] Searching for keyword: sourcemage
+    Found 5 matching repos.
+[+] Searching for keyword: jobber
+    Found 129 matching repos.
+[+] Searching for keyword: euleros
+    Found 15 matching repos.
+[+] Searching for keyword: alt
+    Found 8 matching repos.
+[+] Searching for keyword: unit
+    Found 36 matching repos.
+[+] Searching for keyword: clefos
+    Found 26 matching repos.
+[+] Searching for keyword: spark
+    Found 234 matching repos.
+[+] Searching for keyword: crux
+    Found 4 matching repos.
+[+] Searching for keyword: glassfish
+    Found 26 matching repos.
+[+] Searching for keyword: known
+    Found 145 matching repos.
+[+] Searching for keyword: hola-mundo
+    Found 211 matching repos.
+[+] Searching for keyword: mageia
+    Found 13 matching repos.
+[+] Searching for keyword: ubuntu-upstart
+[429] Rate limit hit. Waiting 60 seconds for keyword 'spark' page 13
+[429] Rate limit hit. Waiting 60 seconds for keyword 'unit' page 15
+[429] Rate limit hit. Waiting 59 seconds for keyword 'scratch' page 21
+[429] Rate limit hit. Waiting 60 seconds for keyword 'sl' page 20
+[429] Rate limit hit. Waiting 60 seconds for keyword 'alt' page 17
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ubuntu-upstart' page 4
+[429] Rate limit hit. Waiting 60 seconds for keyword 'known' page 9
+[429] Rate limit hit. Waiting 60 seconds for keyword 'hola-mundo' page 6
+    Found 312 matching repos.
+[+] Searching for keyword: silverpeas
+    Found 7 matching repos.
+[+] Searching for keyword: kaazing-gateway
+    Found 8 matching repos.
+[+] Searching for keyword: express-gateway
+[429] Rate limit hit. Waiting 60 seconds for keyword 'kaazing-gateway' page 23
+[429] Rate limit hit. Waiting 60 seconds for keyword 'spark' page 40
+[429] Rate limit hit. Waiting 60 seconds for keyword 'express-gateway' page 21
+[429] Rate limit hit. Waiting 60 seconds for keyword 'alt' page 44
+[429] Rate limit hit. Waiting 60 seconds for keyword 'hola-mundo' page 34
+[429] Rate limit hit. Waiting 60 seconds for keyword 'sl' page 48
+[429] Rate limit hit. Waiting 59 seconds for keyword 'unit' page 44
+[429] Rate limit hit. Waiting 59 seconds for keyword 'ubuntu-upstart' page 31
+    Found 30 matching repos.
+[+] Searching for keyword: rakudo-star
+[429] Rate limit hit. Waiting 60 seconds for keyword 'hola-mundo' page 57
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rakudo-star' page 4
+[429] Rate limit hit. Waiting 60 seconds for keyword 'express-gateway' page 44
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ubuntu-upstart' page 54
+[429] Rate limit hit. Waiting 59 seconds for keyword 'spark' page 65
+[429] Rate limit hit. Waiting 60 seconds for keyword 'kaazing-gateway' page 48
+[429] Rate limit hit. Waiting 60 seconds for keyword 'sl' page 73
+    Found 93 matching repos.
+[+] Searching for keyword: docker-dev
+    Found 222 matching repos.
+[+] Searching for keyword: dart
+[429] Rate limit hit. Waiting 60 seconds for keyword 'dart' page 8
+[429] Rate limit hit. Waiting 60 seconds for keyword 'sl' page 91
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ubuntu-upstart' page 73
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rakudo-star' page 23
+[429] Rate limit hit. Waiting 60 seconds for keyword 'docker-dev' page 22
+[429] Rate limit hit. Waiting 60 seconds for keyword 'kaazing-gateway' page 67
+[429] Rate limit hit. Waiting 60 seconds for keyword 'express-gateway' page 64
+[429] Rate limit hit. Waiting 59 seconds for keyword 'spark' page 85
+    Found 77 matching repos.
+[+] Searching for keyword: rapidoid
+    Found 6 matching repos.
+[+] Searching for keyword: eggdrop
+    Found 20 matching repos.
+[+] Searching for keyword: fsharp
+    Found 31 matching repos.
+[+] Searching for keyword: emqx
+    Found 4616 matching repos.
+[+] Searching for keyword: thrift
+    Found 193 matching repos.
+[+] Searching for keyword: swipl
+    Found 19 matching repos.
+[+] Searching for keyword: spiped
+    Found 25 matching repos.
+[+] Searching for keyword: celery
+    Found 68 matching repos.
+[+] Searching for keyword: php-zendserver
+    Found 16 matching repos.
+[+] Searching for keyword: convertigo
+    Found 11 matching repos.
+[+] Searching for keyword: gazebo
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rakudo-star' page 48
+[429] Rate limit hit. Waiting 59 seconds for keyword 'ubuntu-upstart' page 99
+[429] Rate limit hit. Waiting 60 seconds for keyword 'kaazing-gateway' page 93
+[429] Rate limit hit. Waiting 60 seconds for keyword 'gazebo' page 3
+[429] Rate limit hit. Waiting 60 seconds for keyword 'dart' page 36
+[429] Rate limit hit. Waiting 60 seconds for keyword 'celery' page 7
+[429] Rate limit hit. Waiting 60 seconds for keyword 'docker-dev' page 45
+[429] Rate limit hit. Waiting 59 seconds for keyword 'express-gateway' page 90
+    Found 34 matching repos.
+[+] Searching for keyword: hello-seattle
+    Found 87 matching repos.
+[+] Searching for keyword: nuxeo
+    Found 47 matching repos.
+[+] Searching for keyword: friendica
+    Found 56 matching repos.
+[+] Searching for keyword: geonetwork
+    Found 25 matching repos.
+[+] Searching for keyword: postfixadmin
+    Found 6 matching repos.
+[+] Searching for keyword: lightstreamer
+    Found 40 matching repos.
+[+] Searching for keyword: notary
+    Found 55 matching repos.
+[+] Searching for keyword: plone
+    Found 13 matching repos.
+[+] Searching for keyword: cirros
+    Found 21 matching repos.
+[+] Searching for keyword: clearlinux
+    Found 52 matching repos.
+[+] Searching for keyword: backdrop
+    Found 22 matching repos.
+[+] Searching for keyword: ibm-semeru-runtimes
+    Found 14 matching repos.
+[+] Searching for keyword: haskell
+    Found 10 matching repos.
+[+] Searching for keyword: irssi
+    Found 123 matching repos.
+[+] Searching for keyword: ubuntu-debootstrap
+    Found 66 matching repos.
+[+] Searching for keyword: rails
+    Found 67 matching repos.
+[+] Searching for keyword: storm
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rails' page 5
+[429] Rate limit hit. Waiting 59 seconds for keyword 'hello-seattle' page 19
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rakudo-star' page 67
+[429] Rate limit hit. Waiting 60 seconds for keyword 'haskell' page 9
+[429] Rate limit hit. Waiting 60 seconds for keyword 'docker-dev' page 61
+[429] Rate limit hit. Waiting 60 seconds for keyword 'storm' page 4
+[429] Rate limit hit. Waiting 59 seconds for keyword 'celery' page 27
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ubuntu-debootstrap' page 7
+    Found 147 matching repos.
+[+] Searching for keyword: almalinux
+    Found 216 matching repos.
+[+] Searching for keyword: opensuse
+    Found 133 matching repos.
+[+] Searching for keyword: neurodebian
+    Found 21 matching repos.
+[+] Searching for keyword: r-base
+    Found 197 matching repos.
+[+] Searching for keyword: monica
+[429] Rate limit hit. Waiting 60 seconds for keyword 'hello-seattle' page 42
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rakudo-star' page 89
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ubuntu-debootstrap' page 29
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rails' page 29
+[429] Rate limit hit. Waiting 60 seconds for keyword 'docker-dev' page 81
+[429] Rate limit hit. Waiting 60 seconds for keyword 'storm' page 28
+[429] Rate limit hit. Waiting 60 seconds for keyword 'monica' page 7
+[429] Rate limit hit. Waiting 60 seconds for keyword 'r-base' page 10
+    Found 51 matching repos.
+[+] Searching for keyword: fluentd
+    Found 16 matching repos.
+[+] Searching for keyword: bonita
+    Found 35 matching repos.
+[+] Searching for keyword: ibmjava
+    Found 25 matching repos.
+[+] Searching for keyword: open-liberty
+    Found 188 matching repos.
+[+] Searching for keyword: orientdb
+    Found 108 matching repos.
+[+] Searching for keyword: julia
+    Found 94 matching repos.
+[+] Searching for keyword: iojs
+    Found 32 matching repos.
+[+] Searching for keyword: photon
+[429] Rate limit hit. Waiting 60 seconds for keyword 'julia' page 7
+[429] Rate limit hit. Waiting 60 seconds for keyword 'r-base' page 36
+[429] Rate limit hit. Waiting 60 seconds for keyword 'hello-seattle' page 68
+[429] Rate limit hit. Waiting 60 seconds for keyword 'open-liberty' page 14
+[429] Rate limit hit. Waiting 60 seconds for keyword 'photon' page 4
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rails' page 57
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ubuntu-debootstrap' page 56
+[429] Rate limit hit. Waiting 60 seconds for keyword 'fluentd' page 26
+    Found 127 matching repos.
+[+] Searching for keyword: aerospike
+    Found 60 matching repos.
+[+] Searching for keyword: crate
+[429] Rate limit hit. Waiting 60 seconds for keyword 'r-base' page 58
+[429] Rate limit hit. Waiting 60 seconds for keyword 'crate' page 2
+[429] Rate limit hit. Waiting 60 seconds for keyword 'julia' page 29
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ubuntu-debootstrap' page 77
+[429] Rate limit hit. Waiting 60 seconds for keyword 'hello-seattle' page 90
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rails' page 80
+[429] Rate limit hit. Waiting 60 seconds for keyword 'fluentd' page 49
+[429] Rate limit hit. Waiting 60 seconds for keyword 'open-liberty' page 37
+    Found 693 matching repos.
+[+] Searching for keyword: varnish
+    Found 41 matching repos.
+[+] Searching for keyword: piwik
+    Found 69 matching repos.
+[+] Searching for keyword: yourls
+    Found 85 matching repos.
+[+] Searching for keyword: django
+    Found 26 matching repos.
+[+] Searching for keyword: sapmachine
+    Found 13 matching repos.
+[+] Searching for keyword: websphere-liberty
+[429] Rate limit hit. Waiting 60 seconds for keyword 'varnish' page 17
+[429] Rate limit hit. Waiting 60 seconds for keyword 'websphere-liberty' page 10
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ubuntu-debootstrap' page 97
+[429] Rate limit hit. Waiting 60 seconds for keyword 'r-base' page 79
+[429] Rate limit hit. Waiting 60 seconds for keyword 'julia' page 51
+[429] Rate limit hit. Waiting 60 seconds for keyword 'django' page 13
+[429] Rate limit hit. Waiting 60 seconds for keyword 'open-liberty' page 58
+[429] Rate limit hit. Waiting 60 seconds for keyword 'fluentd' page 71
+    Found 18 matching repos.
+[+] Searching for keyword: tomee
+    Found 126 matching repos.
+[+] Searching for keyword: haxe
+    Found 77 matching repos.
+[+] Searching for keyword: gcc
+    Found 32 matching repos.
+[+] Searching for keyword: hylang
+    Found 24 matching repos.
+[+] Searching for keyword: swift
+    Found 2263 matching repos.
+[+] Searching for keyword: znc
+    Found 542 matching repos.
+[+] Searching for keyword: archlinux
+    Found 260 matching repos.
+[+] Searching for keyword: ros
+    Found 122 matching repos.
+[+] Searching for keyword: xwiki
+    Found 73 matching repos.
+[+] Searching for keyword: rockylinux
+    Found 242 matching repos.
+[+] Searching for keyword: arangodb
+[429] Rate limit hit. Waiting 60 seconds for keyword 'django' page 38
+[429] Rate limit hit. Waiting 60 seconds for keyword 'arangodb' page 5
+[429] Rate limit hit. Waiting 59 seconds for keyword 'swift' page 15
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ros' page 10
+[429] Rate limit hit. Waiting 60 seconds for keyword 'gcc' page 19
+[429] Rate limit hit. Waiting 60 seconds for keyword 'open-liberty' page 83
+[429] Rate limit hit. Waiting 60 seconds for keyword 'archlinux' page 13
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rockylinux' page 8
+    Found 79 matching repos.
+[+] Searching for keyword: clojure
+    Found 202 matching repos.
+[+] Searching for keyword: oraclelinux
+    Found 440 matching repos.
+[+] Searching for keyword: pypy
+    Found 137 matching repos.
+[+] Searching for keyword: jetty
+    Found 86 matching repos.
+[+] Searching for keyword: mono
+    Found 54 matching repos.
+[+] Searching for keyword: odoo
+    Found 165 matching repos.
+[+] Searching for keyword: mediawiki
+[429] Rate limit hit. Waiting 60 seconds for keyword 'django' page 58
+[429] Rate limit hit. Waiting 60 seconds for keyword 'oraclelinux' page 19
+[429] Rate limit hit. Waiting 60 seconds for keyword 'swift' page 36
+[429] Rate limit hit. Waiting 60 seconds for keyword 'gcc' page 39
+[429] Rate limit hit. Waiting 59 seconds for keyword 'ros' page 31
+[429] Rate limit hit. Waiting 59 seconds for keyword 'odoo' page 3
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mediawiki' page 3
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mono' page 11
+    Found 232 matching repos.
+[+] Searching for keyword: jruby
+    Found 90 matching repos.
+[+] Searching for keyword: owncloud
+    Found 231 matching repos.
+[+] Searching for keyword: kapacitor
+    Found 78 matching repos.
+[+] Searching for keyword: elixir
+    Found 480 matching repos.
+[+] Searching for keyword: erlang
+    Found 261 matching repos.
+[+] Searching for keyword: redmine
+[429] Rate limit hit. Waiting 60 seconds for keyword 'odoo' page 26
+[429] Rate limit hit. Waiting 60 seconds for keyword 'gcc' page 62
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ros' page 54
+[429] Rate limit hit. Waiting 60 seconds for keyword 'django' page 81
+[429] Rate limit hit. Waiting 60 seconds for keyword 'erlang' page 14
+[429] Rate limit hit. Waiting 60 seconds for keyword 'elixir' page 15
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mono' page 34
+[429] Rate limit hit. Waiting 60 seconds for keyword 'redmine' page 11
+    Found 245 matching repos.
+[+] Searching for keyword: phpmyadmin
+    Found 610 matching repos.
+[+] Searching for keyword: rocket.chat
+    Found 79 matching repos.
+[+] Searching for keyword: rethinkdb
+    Found 499 matching repos.
+[+] Searching for keyword: groovy
+    Found 207 matching repos.
+[+] Searching for keyword: swarm
+    Found 2310 matching repos.
+[+] Searching for keyword: joomla
+    Found 423 matching repos.
+[+] Searching for keyword: couchbase
+    Found 102 matching repos.
+[+] Searching for keyword: flink
+[429] Rate limit hit. Waiting 59 seconds for keyword 'couchbase' page 6
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mono' page 60
+[429] Rate limit hit. Waiting 60 seconds for keyword 'phpmyadmin' page 26
+[429] Rate limit hit. Waiting 60 seconds for keyword 'swarm' page 11
+[429] Rate limit hit. Waiting 60 seconds for keyword 'flink' page 5
+[429] Rate limit hit. Waiting 60 seconds for keyword 'joomla' page 8
+[429] Rate limit hit. Waiting 60 seconds for keyword 'odoo' page 54
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ros' page 81
+    Found 236 matching repos.
+[+] Searching for keyword: rust
+    Found 1523 matching repos.
+[+] Searching for keyword: nats-streaming
+    Found 254 matching repos.
+[+] Searching for keyword: adoptopenjdk
+    Found 1170 matching repos.
+[+] Searching for keyword: amazoncorretto
+    Found 81 matching repos.
+[+] Searching for keyword: sentry
+    Found 125 matching repos.
+[+] Searching for keyword: fedora
+[429] Rate limit hit. Waiting 60 seconds for keyword 'flink' page 25
+[429] Rate limit hit. Waiting 60 seconds for keyword 'fedora' page 7
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ros' page 100
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rust' page 20
+[429] Rate limit hit. Waiting 60 seconds for keyword 'nats-streaming' page 17
+[429] Rate limit hit. Waiting 60 seconds for keyword 'sentry' page 11
+[429] Rate limit hit. Waiting 60 seconds for keyword 'swarm' page 32
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mono' page 81
+    Found 817 matching repos.
+[+] Searching for keyword: matomo
+    Found 173 matching repos.
+[+] Searching for keyword: teamspeak
+    Found 78 matching repos.
+[+] Searching for keyword: java
+    Found 530 matching repos.
+[+] Searching for keyword: jenkins
+    Found 642 matching repos.
+[+] Searching for keyword: chronograf
+    Found 82 matching repos.
+[+] Searching for keyword: composer
+    Found 234 matching repos.
+[+] Searching for keyword: eclipse-temurin
+[429] Rate limit hit. Waiting 60 seconds for keyword 'nats-streaming' page 40
+[429] Rate limit hit. Waiting 60 seconds for keyword 'java' page 16
+[429] Rate limit hit. Waiting 59 seconds for keyword 'fedora' page 30
+[429] Rate limit hit. Waiting 60 seconds for keyword 'jenkins' page 16
+[429] Rate limit hit. Waiting 60 seconds for keyword 'eclipse-temurin' page 4
+[429] Rate limit hit. Waiting 60 seconds for keyword 'swarm' page 55
+[429] Rate limit hit. Waiting 60 seconds for keyword 'composer' page 5
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rust' page 44
+[429] Rate limit hit. Waiting 60 seconds for keyword 'swarm' page 82
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rust' page 71
+[429] Rate limit hit. Waiting 60 seconds for keyword 'eclipse-temurin' page 32
+[429] Rate limit hit. Waiting 60 seconds for keyword 'nats-streaming' page 68
+[429] Rate limit hit. Waiting 60 seconds for keyword 'java' page 43
+[429] Rate limit hit. Waiting 60 seconds for keyword 'fedora' page 59
+[429] Rate limit hit. Waiting 60 seconds for keyword 'jenkins' page 44
+[429] Rate limit hit. Waiting 60 seconds for keyword 'composer' page 33
+    Found 327 matching repos.
+[+] Searching for keyword: couchdb
+    Found 151 matching repos.
+[+] Searching for keyword: logstash
+    Found 351 matching repos.
+[+] Searching for keyword: percona
+    Found 814 matching repos.
+[+] Searching for keyword: drupal
+[429] Rate limit hit. Waiting 60 seconds for keyword 'java' page 63
+[429] Rate limit hit. Waiting 60 seconds for keyword 'nats-streaming' page 89
+[429] Rate limit hit. Waiting 59 seconds for keyword 'rust' page 92
+[429] Rate limit hit. Waiting 60 seconds for keyword 'drupal' page 6
+[429] Rate limit hit. Waiting 60 seconds for keyword 'logstash' page 22
+[429] Rate limit hit. Waiting 60 seconds for keyword 'jenkins' page 64
+[429] Rate limit hit. Waiting 60 seconds for keyword 'composer' page 54
+[429] Rate limit hit. Waiting 60 seconds for keyword 'percona' page 10
+    Found 194 matching repos.
+[+] Searching for keyword: nats
+    Found 655 matching repos.
+[+] Searching for keyword: kibana
+    Found 56 matching repos.
+[+] Searching for keyword: cassandra
+    Found 864 matching repos.
+[+] Searching for keyword: buildpack-deps
+[429] Rate limit hit. Waiting 60 seconds for keyword 'jenkins' page 87
+[429] Rate limit hit. Waiting 60 seconds for keyword 'drupal' page 30
+[429] Rate limit hit. Waiting 59 seconds for keyword 'buildpack-deps' page 3
+[429] Rate limit hit. Waiting 60 seconds for keyword 'java' page 86
+[429] Rate limit hit. Waiting 60 seconds for keyword 'cassandra' page 13
+[429] Rate limit hit. Waiting 60 seconds for keyword 'kibana' page 17
+[429] Rate limit hit. Waiting 60 seconds for keyword 'nats' page 18
+[429] Rate limit hit. Waiting 60 seconds for keyword 'logstash' page 46
+    Found 8196 matching repos.
+[+] Searching for keyword: perl
+    Found 4457 matching repos.
+[+] Searching for keyword: mongo-express
+    Found 2394 matching repos.
+[+] Searching for keyword: gradle
+[429] Rate limit hit. Waiting 60 seconds for keyword 'nats' page 45
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mongo-express' page 13
+[429] Rate limit hit. Waiting 60 seconds for keyword 'perl' page 15
+[429] Rate limit hit. Waiting 60 seconds for keyword 'kibana' page 44
+[429] Rate limit hit. Waiting 60 seconds for keyword 'drupal' page 58
+[429] Rate limit hit. Waiting 60 seconds for keyword 'gradle' page 2
+[429] Rate limit hit. Waiting 60 seconds for keyword 'buildpack-deps' page 32
+[429] Rate limit hit. Waiting 60 seconds for keyword 'cassandra' page 40
+    Found 1144 matching repos.
+[+] Searching for keyword: neo4j
+    Found 723 matching repos.
+[+] Searching for keyword: zookeeper
+[429] Rate limit hit. Waiting 60 seconds for keyword 'buildpack-deps' page 53
+[429] Rate limit hit. Waiting 60 seconds for keyword 'zookeeper' page 10
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mongo-express' page 34
+[429] Rate limit hit. Waiting 59 seconds for keyword 'neo4j' page 17
+[429] Rate limit hit. Waiting 59 seconds for keyword 'gradle' page 23
+[429] Rate limit hit. Waiting 60 seconds for keyword 'nats' page 67
+[429] Rate limit hit. Waiting 59 seconds for keyword 'perl' page 37
+[429] Rate limit hit. Waiting 59 seconds for keyword 'kibana' page 66
+    Found 116 matching repos.
+[+] Searching for keyword: kong
+    Found 2487 matching repos.
+[+] Searching for keyword: solr
+    Found 554 matching repos.
+[+] Searching for keyword: ghost
+    Found 240 matching repos.
+[+] Searching for keyword: adminer
+    Found 283 matching repos.
+[+] Searching for keyword: bash
+[429] Rate limit hit. Waiting 60 seconds for keyword 'adminer' page 8
+[429] Rate limit hit. Waiting 60 seconds for keyword 'solr' page 20
+[429] Rate limit hit. Waiting 60 seconds for keyword 'zookeeper' page 33
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ghost' page 18
+[429] Rate limit hit. Waiting 60 seconds for keyword 'kong' page 24
+[429] Rate limit hit. Waiting 60 seconds for keyword 'bash' page 5
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mongo-express' page 57
+[429] Rate limit hit. Waiting 60 seconds for keyword 'gradle' page 47
+    Found 594 matching repos.
+[+] Searching for keyword: vault
+    Found 549 matching repos.
+[+] Searching for keyword: telegraf
+    Found 721 matching repos.
+[+] Searching for keyword: eclipse-mosquitto
+    Found 674 matching repos.
+[+] Searching for keyword: caddy
+[429] Rate limit hit. Waiting 59 seconds for keyword 'vault' page 24
+[429] Rate limit hit. Waiting 60 seconds for keyword 'caddy' page 6
+[429] Rate limit hit. Waiting 60 seconds for keyword 'zookeeper' page 60
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mongo-express' page 83
+[429] Rate limit hit. Waiting 60 seconds for keyword 'bash' page 32
+[429] Rate limit hit. Waiting 60 seconds for keyword 'kong' page 51
+[429] Rate limit hit. Waiting 60 seconds for keyword 'eclipse-mosquitto' page 10
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ghost' page 46
+    Found 2514 matching repos.
+[+] Searching for keyword: maven
+    Found 558 matching repos.
+[+] Searching for keyword: tomcat
+    Found 371 matching repos.
+[+] Searching for keyword: elasticsearch
+[429] Rate limit hit. Waiting 60 seconds for keyword 'bash' page 52
+[429] Rate limit hit. Waiting 60 seconds for keyword 'eclipse-mosquitto' page 30
+[429] Rate limit hit. Waiting 60 seconds for keyword 'elasticsearch' page 4
+[429] Rate limit hit. Waiting 60 seconds for keyword 'caddy' page 27
+[429] Rate limit hit. Waiting 60 seconds for keyword 'vault' page 46
+[429] Rate limit hit. Waiting 60 seconds for keyword 'maven' page 19
+[429] Rate limit hit. Waiting 60 seconds for keyword 'tomcat' page 18
+[429] Rate limit hit. Waiting 60 seconds for keyword 'kong' page 72
+    Found 936 matching repos.
+[+] Searching for keyword: amazonlinux
+    Found 181 matching repos.
+[+] Searching for keyword: nextcloud
+    Found 459 matching repos.
+[+] Searching for keyword: consul
+[429] Rate limit hit. Waiting 60 seconds for keyword 'vault' page 70
+[429] Rate limit hit. Waiting 60 seconds for keyword 'elasticsearch' page 28
+[429] Rate limit hit. Waiting 60 seconds for keyword 'maven' page 43
+[429] Rate limit hit. Waiting 60 seconds for keyword 'consul' page 2
+[429] Rate limit hit. Waiting 59 seconds for keyword 'nextcloud' page 6
+[429] Rate limit hit. Waiting 60 seconds for keyword 'tomcat' page 42
+[429] Rate limit hit. Waiting 60 seconds for keyword 'bash' page 77
+[429] Rate limit hit. Waiting 60 seconds for keyword 'caddy' page 52
+    Found 921 matching repos.
+[+] Searching for keyword: influxdb
+    Found 1600 matching repos.
+[+] Searching for keyword: haproxy
+    Found 407 matching repos.
+[+] Searching for keyword: sonarqube
+[429] Rate limit hit. Waiting 60 seconds for keyword 'influxdb' page 20
+[429] Rate limit hit. Waiting 59 seconds for keyword 'sonarqube' page 4
+[429] Rate limit hit. Waiting 60 seconds for keyword 'consul' page 29
+[429] Rate limit hit. Waiting 60 seconds for keyword 'elasticsearch' page 55
+[429] Rate limit hit. Waiting 60 seconds for keyword 'tomcat' page 68
+[429] Rate limit hit. Waiting 60 seconds for keyword 'maven' page 70
+[429] Rate limit hit. Waiting 60 seconds for keyword 'haproxy' page 14
+[429] Rate limit hit. Waiting 60 seconds for keyword 'nextcloud' page 34
+    Found 1196 matching repos.
+[+] Searching for keyword: centos
+[429] Rate limit hit. Waiting 60 seconds for keyword 'tomcat' page 88
+[429] Rate limit hit. Waiting 59 seconds for keyword 'influxdb' page 41
+[429] Rate limit hit. Waiting 59 seconds for keyword 'centos' page 20
+[429] Rate limit hit. Waiting 60 seconds for keyword 'sonarqube' page 26
+[429] Rate limit hit. Waiting 60 seconds for keyword 'consul' page 50
+[429] Rate limit hit. Waiting 60 seconds for keyword 'elasticsearch' page 76
+[429] Rate limit hit. Waiting 60 seconds for keyword 'haproxy' page 35
+[429] Rate limit hit. Waiting 60 seconds for keyword 'maven' page 91
+    Found 923 matching repos.
+[+] Searching for keyword: php
+    Found 1485 matching repos.
+[+] Searching for keyword: debian
+    Found 2227 matching repos.
+[+] Searching for keyword: wordpress
+    Found 8418 matching repos.
+[+] Searching for keyword: ruby
+    Found 1759 matching repos.
+[+] Searching for keyword: registry
+[429] Rate limit hit. Waiting 59 seconds for keyword 'debian' page 15
+[429] Rate limit hit. Waiting 60 seconds for keyword 'registry' page 1
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ruby' page 13
+[429] Rate limit hit. Waiting 60 seconds for keyword 'elasticsearch' page 100
+[429] Rate limit hit. Waiting 60 seconds for keyword 'consul' page 74
+[429] Rate limit hit. Waiting 60 seconds for keyword 'php' page 20
+[429] Rate limit hit. Waiting 60 seconds for keyword 'wordpress' page 16
+[429] Rate limit hit. Waiting 60 seconds for keyword 'centos' page 45
+    Found 5627 matching repos.
+[+] Searching for keyword: golang
+    Found 1044 matching repos.
+[+] Searching for keyword: openjdk
+[429] Rate limit hit. Waiting 60 seconds for keyword 'wordpress' page 42
+[429] Rate limit hit. Waiting 60 seconds for keyword 'debian' page 43
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ruby' page 40
+[429] Rate limit hit. Waiting 60 seconds for keyword 'golang' page 28
+[429] Rate limit hit. Waiting 60 seconds for keyword 'openjdk' page 10
+[429] Rate limit hit. Waiting 60 seconds for keyword 'centos' page 71
+[429] Rate limit hit. Waiting 60 seconds for keyword 'php' page 47
+[429] Rate limit hit. Waiting 60 seconds for keyword 'registry' page 29
+[429] Rate limit hit. Waiting 59 seconds for keyword 'wordpress' page 63
+[429] Rate limit hit. Waiting 59 seconds for keyword 'golang' page 49
+[429] Rate limit hit. Waiting 60 seconds for keyword 'debian' page 65
+[429] Rate limit hit. Waiting 59 seconds for keyword 'ruby' page 62
+[429] Rate limit hit. Waiting 60 seconds for keyword 'registry' page 50
+[429] Rate limit hit. Waiting 60 seconds for keyword 'centos' page 92
+[429] Rate limit hit. Waiting 60 seconds for keyword 'php' page 68
+[429] Rate limit hit. Waiting 60 seconds for keyword 'openjdk' page 32
+    Found 7995 matching repos.
+[+] Searching for keyword: mariadb
+[429] Rate limit hit. Waiting 60 seconds for keyword 'php' page 91
+[429] Rate limit hit. Waiting 59 seconds for keyword 'wordpress' page 88
+[429] Rate limit hit. Waiting 59 seconds for keyword 'registry' page 74
+[429] Rate limit hit. Waiting 60 seconds for keyword 'openjdk' page 56
+[429] Rate limit hit. Waiting 60 seconds for keyword 'golang' page 74
+[429] Rate limit hit. Waiting 60 seconds for keyword 'debian' page 89
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ruby' page 87
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mariadb' page 17
+    Found 7555 matching repos.
+[+] Searching for keyword: hello-world
+    Found 5909 matching repos.
+[+] Searching for keyword: docker
+    Found 6403 matching repos.
+[+] Searching for keyword: traefik
+    Found 1996 matching repos.
+[+] Searching for keyword: rabbitmq
+    Found 2076 matching repos.
+[+] Searching for keyword: mysql
+    Found 3170 matching repos.
+[+] Searching for keyword: mongo
+[429] Rate limit hit. Waiting 59 seconds for keyword 'rabbitmq' page 15
+[429] Rate limit hit. Waiting 60 seconds for keyword 'docker' page 14
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mongo' page 2
+[429] Rate limit hit. Waiting 60 seconds for keyword 'openjdk' page 84
+[429] Rate limit hit. Waiting 60 seconds for keyword 'hello-world' page 18
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mariadb' page 45
+[429] Rate limit hit. Waiting 60 seconds for keyword 'traefik' page 18
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mysql' page 3
+    Found 1057 matching repos.
+[+] Searching for keyword: httpd
+    Found 2347 matching repos.
+[+] Searching for keyword: node
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mongo' page 25
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mariadb' page 68
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rabbitmq' page 39
+[429] Rate limit hit. Waiting 59 seconds for keyword 'hello-world' page 40
+[429] Rate limit hit. Waiting 59 seconds for keyword 'docker' page 33
+[429] Rate limit hit. Waiting 59 seconds for keyword 'node' page 8
+[429] Rate limit hit. Waiting 59 seconds for keyword 'httpd' page 14
+[429] Rate limit hit. Waiting 59 seconds for keyword 'mysql' page 26
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mariadb' page 90
+[429] Rate limit hit. Waiting 60 seconds for keyword 'httpd' page 36
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mysql' page 48
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mongo' page 48
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rabbitmq' page 62
+[429] Rate limit hit. Waiting 60 seconds for keyword 'hello-world' page 62
+[429] Rate limit hit. Waiting 60 seconds for keyword 'node' page 30
+[429] Rate limit hit. Waiting 60 seconds for keyword 'docker' page 52
+    Found 3881 matching repos.
+[+] Searching for keyword: python
+[429] Rate limit hit. Waiting 60 seconds for keyword 'hello-world' page 89
+[429] Rate limit hit. Waiting 59 seconds for keyword 'docker' page 75
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mysql' page 77
+[429] Rate limit hit. Waiting 60 seconds for keyword 'rabbitmq' page 91
+[429] Rate limit hit. Waiting 60 seconds for keyword 'node' page 57
+[429] Rate limit hit. Waiting 60 seconds for keyword 'mongo' page 77
+[429] Rate limit hit. Waiting 60 seconds for keyword 'httpd' page 66
+[429] Rate limit hit. Waiting 60 seconds for keyword 'python' page 20
+    Found 3815 matching repos.
+[+] Searching for keyword: postgres
+    Found 8480 matching repos.
+[+] Searching for keyword: ubuntu
+    Found 6319 matching repos.
+[+] Searching for keyword: redis
+    Found 8786 matching repos.
+[+] Searching for keyword: alpine
+[429] Rate limit hit. Waiting 59 seconds for keyword 'node' page 82
+[429] Rate limit hit. Waiting 60 seconds for keyword 'httpd' page 93
+[429] Rate limit hit. Waiting 60 seconds for keyword 'redis' page 5
+[429] Rate limit hit. Waiting 60 seconds for keyword 'postgres' page 19
+[429] Rate limit hit. Waiting 60 seconds for keyword 'docker' page 98
+[429] Rate limit hit. Waiting 59 seconds for keyword 'alpine' page 5
+[429] Rate limit hit. Waiting 60 seconds for keyword 'python' page 46
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ubuntu' page 17
+    Found 6505 matching repos.
+[+] Searching for keyword: busybox
+    Found 8340 matching repos.
+[+] Searching for keyword: nginx
+    Found 8020 matching repos.
+[+] Searching for keyword: memcached
+[429] Rate limit hit. Waiting 60 seconds for keyword 'postgres' page 40
+[429] Rate limit hit. Waiting 60 seconds for keyword 'alpine' page 26
+[429] Rate limit hit. Waiting 60 seconds for keyword 'nginx' page 14
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ubuntu' page 36
+[429] Rate limit hit. Waiting 60 seconds for keyword 'memcached' page 4
+[429] Rate limit hit. Waiting 60 seconds for keyword 'busybox' page 19
+[429] Rate limit hit. Waiting 60 seconds for keyword 'python' page 66
+[429] Rate limit hit. Waiting 60 seconds for keyword 'redis' page 27
+[429] Rate limit hit. Waiting 60 seconds for keyword 'busybox' page 45
+[429] Rate limit hit. Waiting 60 seconds for keyword 'alpine' page 52
+[429] Rate limit hit. Waiting 60 seconds for keyword 'ubuntu' page 61
+[429] Rate limit hit. Waiting 60 seconds for keyword 'python' page 90
+[429] Rate limit hit. Waiting 60 seconds for keyword 'nginx' page 39
+[429] Rate limit hit. Waiting 59 seconds for keyword 'memcached' page 31
+[429] Rate limit hit. Waiting 60 seconds for keyword 'redis' page 53
+[429] Rate limit hit. Waiting 60 seconds for keyword 'postgres' page 67
+    Found 8889 matching repos.
+    Found 813 matching repos.
+    Found 9250 matching repos.
+[429] Rate limit hit. Waiting 60 seconds for keyword 'alpine' page 87
+[429] Rate limit hit. Waiting 60 seconds for keyword 'redis' page 89
+[429] Rate limit hit. Waiting 60 seconds for keyword 'busybox' page 85
+    Found 7508 matching repos.
+    Found 7937 matching repos.
+    Found 8881 matching repos.
+    Found 8527 matching repos.
+    Found 5419 matching repos.
+
+[✓] Total unique repos found: 233567
+[✓] Saved results to ../data/targets.csv

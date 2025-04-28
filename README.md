@@ -69,7 +69,7 @@ CryptojackingDetection/
    ```
    3.1. 가상환경 활성화
    ```bash
-   source /Users/ideal/Library/Caches/pypoetry/virtualenvs/cryptojacking-detection-*/bin/activate
+   source /Users/ideal/Library/Caches/pypoetry/virtualenvs/cryptojacking-detection-gFpZeC9O-py3.12/bin/activate
    ```
 4. 각 단계별 스크립트 실행:
    - 공식 이미지 추출: `python src/docker_official_image_scraper.py`
