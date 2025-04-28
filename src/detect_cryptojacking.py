@@ -121,11 +121,9 @@ def analyze_image(image):
             file_list.append(os.path.join(root, file))
 
     detected_rules = set()
-    with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        future_to_file = {executor.submit(yara_scan_file, f): f for f in file_list}
-        for future in as_completed(future_to_file):
-            rules_found = future.result()
-            detected_rules.update(rules_found)
+    for f in file_list:
+        rules_found = yara_scan_file(f)
+        detected_rules.update(rules_found)
 
     detected_rules_str = ",".join(sorted(detected_rules)) if detected_rules else ""
     image_result["yara_detected"] = bool(detected_rules)
