@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "cryptojacking-detection"
+version = "0.1.0"
+description = "크립토재킹 도커 이미지 탐지 프로젝트"
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<4.0"
+requests = "*"
+base58 = "*"
+monero = "*"
+eth_utils = "*"
+python-bitcoinlib = "*"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

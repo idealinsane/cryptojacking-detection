@@ -1,0 +1,14 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# Poetry
+.venv/
+poetry.lock
+
+# 바이너리 및 실행파일, 대용량 파일
+xmrig-6.22.2/*

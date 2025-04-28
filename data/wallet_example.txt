@@ -1,0 +1,31 @@
+ETH wallet address: 0x742d35Cc6634C0532925a3b844Bc454e4438f44e
+
+XMR
+wallet address: 48wCvrT7Nm3G8EMV7GaMjQ2qyJHcsRyA279dm4jDgYKRYM63gzU3ZMELRxYKYwqE7vG4oqvxh9ZKX5KSjeDjhhcLKQ6wJg6
+fake wallet address: 48z4a57E4ZJ3HeudobEQVxdZrU4T6qZhduRmQoqgh6nD2Soch4VZ6DHRWeARkXR1r4sFdU3pEyPXAfEokU5NyaUuWLzFdfT
+
+XMR integrated address: 4KYppGFGe38SWfWDp1bd4gqAzxP9Z9ZtKr1TcFYEdAxKtkLKdzKcAdDdLLZGApJJttAfTRSp9QvVqHYaK8TWEoEZ8rxgKRq
+XMR subaddress: 83tbZp8jAsBCKUNdZ1oQqQLhxRzCGVcvSgL4yq1WJ15F7qrfEAwFv4XYP74YxDs38a5ZUwgGCozH3TiZKv2D1DAMBVtMdiS
+
+BTC
+
+Taproot address - P2TR: bc1p5d7rjq7g6rdk2yhzks9smlaqtedr4dekq08ge8ztwac72sfr9rusxg3297
+SegWit address - P2WPKH: bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq
+Script address - P2SH: 3J98t1WpEZ73CNmQviecrnyiWrnqRhWNLy
+Legacy address - P2PKH: 1BvBMSEYstWetqTFn5Au4m4GFg7xJaNVN2
+
+
+// Evasion test: Address split across strings
+const char* btc_part1 = "1BoatSLRHt";
+const char* btc_part2 = "KNngkdXEeobR76b53LETtpyT";
+const char* btc_addr = strcat(btc_part1, btc_part2);
+
+// Another evasion test: XMR address via array
+const char xmr_addr[] = {
+    '4','8','w','C','v','r','T','7','N','m','3','G','8','E','M','V',
+    '7','G','a','M','j','Q','2','q','y','J','H','c','s','R','y','A',
+    '2','7','9','d','m','4','j','D','g','Y','K','R','Y','M','6','3',
+    'g','z','U','3','Z','M','E','L','R','x','Y','K','Y','w','q','E',
+    '7','v','G','4','o','q','v','x','h','9','Z','K','X','5','K','S',
+    'j','e','D','j','h','h','c','L','K','Q','6','w','J','g','6','\0'
+};
