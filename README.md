@@ -61,7 +61,7 @@ CryptojackingDetection/
    ```
 2. 의존성 설치 및 가상환경 생성
    ```bash
-   poetry install
+   poetry install --no-root
    ```
 3. 가상환경 경로 확인
    ```bash

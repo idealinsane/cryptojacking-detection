@@ -25,17 +25,20 @@ def analyze_image(image):
     }
     # 1. 도커 이미지 pull
     pull_cmd = ["docker", "pull", image]
-    subprocess.run(pull_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    pull_result = subprocess.run(pull_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print("docker pull stderr:", pull_result.stderr.decode())
 
     # 2. 이미지 저장 및 추출
     image_tar = f"{image.replace('/', '_').replace(':', '_')}.tar"
     save_cmd = ["docker", "save", "-o", image_tar, image]
-    subprocess.run(save_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    save_result = subprocess.run(save_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print("docker save stderr:", save_result.stderr.decode())
 
     extract_path = os.path.join(EXTRACT_DIR, image.replace('/', '_').replace(':', '_'))
     os.makedirs(extract_path, exist_ok=True)
     tar_cmd = ["tar", "-xf", image_tar, "-C", extract_path]
-    subprocess.run(tar_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    tar_result = subprocess.run(tar_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print("tar stderr:", tar_result.stderr.decode())
 
     # 3. YARA 병렬 검사 (파일별)
     def yara_scan_file(filepath):
@@ -66,10 +69,13 @@ def analyze_image(image):
     image_result["detected_rules"] = detected_rules_str
     image_result["is_cryptojacking"] = bool(detected_rules)
 
-    # 임시 파일 정리
+    # 임시 파일 정리 및 도커 이미지 삭제
     try:
         os.remove(image_tar)
         shutil.rmtree(extract_path)
+        # 검사 후 도커 이미지 삭제
+        rmi_cmd = ["docker", "rmi", image]
+        subprocess.run(rmi_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     except Exception:
         pass
     return image_result
