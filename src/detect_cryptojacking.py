@@ -6,6 +6,7 @@ import shutil
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import requests
 from threading import Lock
+import tempfile
 
 # 경로 설정
 CSV_PATH = "../data/targets.csv"
@@ -39,7 +40,7 @@ def get_latest_tag(image_name):
 df = pd.read_csv(CSV_PATH)
 results = []
 results_lock = Lock()
-SAVE_INTERVAL = 10  # 10개마다 중간 저장
+MAX_WORKERS = 4  # 동시에 실행할 병렬 프로세스 개수 제한 (시스템 상황에 맞게 조정)
 
 # 각 이미지별 전체 분석 함수
 def analyze_image(image):
@@ -119,7 +120,7 @@ def analyze_image(image):
             file_list.append(os.path.join(root, file))
 
     detected_rules = set()
-    with ProcessPoolExecutor() as executor:
+    with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
         future_to_file = {executor.submit(yara_scan_file, f): f for f in file_list}
         for future in as_completed(future_to_file):
             rules_found = future.result()
@@ -140,26 +141,24 @@ def analyze_image(image):
         pass
     return image_result
 
-# 이미지별 병렬 처리
-def save_partial_results():
-    with results_lock:
-        result_df = pd.DataFrame(results)
-        merged = df.merge(result_df, left_on="image_name", right_on="image")
-        merged.to_csv(OUTPUT_PATH, index=False)
+def save_partial_result_row(result):
+    # 각 결과를 한 줄씩 개별적으로 임시 파일에 append (CSV 헤더가 없으면 추가)
+    file_exists = os.path.exists(OUTPUT_PATH)
+    df_row = pd.DataFrame([result])
+    mode = 'a' if file_exists else 'w'
+    header = not file_exists
+    df_row.to_csv(OUTPUT_PATH, mode=mode, header=header, index=False)
 
+# 이미지별 병렬 처리
 image_list = df['image_name'].tolist()
-with ProcessPoolExecutor() as executor:
-    futures = [executor.submit(analyze_image, image) for image in image_list]
+with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
+    futures = {executor.submit(analyze_image, image): image for image in image_list}
     completed = 0
     for future in as_completed(futures):
         result = future.result()
         with results_lock:
             results.append(result)
-            completed += 1
-            if completed % SAVE_INTERVAL == 0:
-                save_partial_results()
-
-# 마지막 저장
-save_partial_results()
+            save_partial_result_row(result)  # 각 결과를 개별적으로 바로 저장
+        completed += 1
 
 print("\n탐지 완료! 결과는 ../data/targets_detected.csv에 저장되었습니다.")
