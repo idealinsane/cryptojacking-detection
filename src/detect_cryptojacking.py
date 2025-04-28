@@ -4,11 +4,34 @@ import subprocess
 import yara
 import shutil
 from concurrent.futures import ProcessPoolExecutor, as_completed
+import requests
 
 # 경로 설정
 CSV_PATH = "../data/targets.csv"
 YARA_RULE_PATH = "../rules/mining_rules.yar"
 EXTRACT_DIR = "../data/extracted_images"
+
+# Docker Hub에서 가장 최근 태그 조회 함수
+def get_latest_tag(image_name):
+    if '/' not in image_name:
+        namespace = 'library'
+        repo = image_name
+    else:
+        namespace, repo = image_name.split('/', 1)
+    url = f"https://hub.docker.com/v2/repositories/{namespace}/{repo}/tags?page_size=100"
+    try:
+        resp = requests.get(url, timeout=10)
+        if resp.status_code != 200:
+            return None
+        data = resp.json()
+        results = data.get('results', [])
+        if not results:
+            return None
+        results.sort(key=lambda x: x['last_updated'], reverse=True)
+        return results[0]['name']
+    except Exception as e:
+        print(f"[DockerHub API error] {image_name}: {e}")
+        return None
 
 # CSV 읽기
 df = pd.read_csv(CSV_PATH)
@@ -23,22 +46,56 @@ def analyze_image(image):
         "detected_rules": "",
         "is_cryptojacking": False
     }
-    # 1. 도커 이미지 pull
-    pull_cmd = ["docker", "pull", image]
+    # 이미지명/태그 분리
+    if ':' in image:
+        base_image, tag = image.rsplit(':', 1)
+    else:
+        base_image, tag = image, 'latest'
+    image_with_tag = f"{base_image}:{tag}"
+
+    # 1. 도커 이미지 pull (최초 latest 또는 지정 태그)
+    pull_cmd = ["docker", "pull", image_with_tag]
     pull_result = subprocess.run(pull_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print("docker pull stderr:", pull_result.stderr.decode())
 
+    # latest 태그로 실패 시, Docker Hub에서 최신 태그 자동 보정
+    if pull_result.returncode != 0 and tag == 'latest':
+        latest_tag = get_latest_tag(base_image)
+        if latest_tag and latest_tag != 'latest':
+            print(f"[INFO] {image}의 latest 태그가 없어, 최신 태그({latest_tag})로 재시도합니다.")
+            image_with_tag = f"{base_image}:{latest_tag}"
+            pull_cmd = ["docker", "pull", image_with_tag]
+            pull_result = subprocess.run(pull_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            print("docker pull stderr (retry):", pull_result.stderr.decode())
+        else:
+            print(f"[ERROR] {image}에 사용할 수 있는 태그가 없습니다.")
+            return image_result
+
+    if pull_result.returncode != 0:
+        print(f"[ERROR] docker pull 실패: {image_with_tag}")
+        return image_result  # 이후 단계 skip
+
     # 2. 이미지 저장 및 추출
-    image_tar = f"{image.replace('/', '_').replace(':', '_')}.tar"
-    save_cmd = ["docker", "save", "-o", image_tar, image]
+    image_tar = f"{base_image.replace('/', '_').replace(':', '_')}_{tag}.tar"
+    save_cmd = ["docker", "save", "-o", image_tar, image_with_tag]
     save_result = subprocess.run(save_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print("docker save stderr:", save_result.stderr.decode())
+    if save_result.returncode != 0:
+        print(f"[ERROR] docker save 실패: {image_with_tag}")
+        return image_result
 
-    extract_path = os.path.join(EXTRACT_DIR, image.replace('/', '_').replace(':', '_'))
+    extract_path = os.path.join(EXTRACT_DIR, base_image.replace('/', '_').replace(':', '_') + f"_{tag}")
     os.makedirs(extract_path, exist_ok=True)
     tar_cmd = ["tar", "-xf", image_tar, "-C", extract_path]
     tar_result = subprocess.run(tar_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     print("tar stderr:", tar_result.stderr.decode())
+    if tar_result.returncode != 0:
+        print(f"[ERROR] tar 추출 실패: {image_tar}")
+        try:
+            os.remove(image_tar)
+        except Exception:
+            pass
+        return image_result
 
     # 3. YARA 병렬 검사 (파일별)
     def yara_scan_file(filepath):
@@ -73,8 +130,7 @@ def analyze_image(image):
     try:
         os.remove(image_tar)
         shutil.rmtree(extract_path)
-        # 검사 후 도커 이미지 삭제
-        rmi_cmd = ["docker", "rmi", image]
+        rmi_cmd = ["docker", "rmi", image_with_tag]
         subprocess.run(rmi_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     except Exception:
         pass
