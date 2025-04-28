@@ -8,7 +8,7 @@ from docker_official_image_scraper import get_popular_official_images
 
 MAX_PAGES = 100
 PAGE_SIZE = 100
-OUTPUT_CSV = "../data/targets.csv"
+OUTPUT_CSV = "./data/targets.csv"
 
 # 공식 이미지 이름 추출 (500개)
 SEARCH_KEYWORDS = get_popular_official_images(total_limit=500)
