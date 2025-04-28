@@ -102,12 +102,16 @@ def analyze_image(image):
     # 3. YARA 병렬 검사 (파일별)
     def yara_scan_file(filepath):
         try:
+            print(f"[YARA] Scanning: {filepath}")
             rules = yara.compile(filepath=YARA_RULE_PATH)
             matches = rules.match(filepath)
             if matches:
+                print(f"[YARA] Match: {filepath} -> {[match.rule for match in matches]}")
                 return [match.rule for match in matches]
-        except Exception:
-            pass
+            else:
+                print(f"[YARA] No match: {filepath}")
+        except Exception as e:
+            print(f"[YARA][ERROR] {filepath}: {e}")
         return []
 
     # 파일 리스트 수집
