@@ -5,8 +5,6 @@ import yara
 import shutil
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import requests
-from threading import Lock
-import tempfile
 
 # 경로 설정
 CSV_PATH = "../data/targets.csv"
@@ -39,7 +37,6 @@ def get_latest_tag(image_name):
 # CSV 읽기
 df = pd.read_csv(CSV_PATH)
 results = []
-results_lock = Lock()
 MAX_WORKERS = 4  # 동시에 실행할 병렬 프로세스 개수 제한 (시스템 상황에 맞게 조정)
 
 # 각 이미지별 전체 분석 함수
@@ -134,31 +131,40 @@ def analyze_image(image):
     # 임시 파일 정리 및 도커 이미지 삭제
     try:
         os.remove(image_tar)
+    except Exception as e:
+        print(f"[WARNING] 이미지 tar 파일 삭제 실패: {image_tar} ({e})")
+    try:
         shutil.rmtree(extract_path)
+    except Exception as e:
+        print(f"[WARNING] 추출 디렉토리 삭제 실패: {extract_path} ({e})")
+    try:
         rmi_cmd = ["docker", "rmi", image_with_tag]
         subprocess.run(rmi_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"[WARNING] 도커 이미지 삭제 실패: {image_with_tag} ({e})")
     return image_result
 
 def save_partial_result_row(result):
     # 각 결과를 한 줄씩 개별적으로 임시 파일에 append (CSV 헤더가 없으면 추가)
-    file_exists = os.path.exists(OUTPUT_PATH)
-    df_row = pd.DataFrame([result])
-    mode = 'a' if file_exists else 'w'
-    header = not file_exists
-    df_row.to_csv(OUTPUT_PATH, mode=mode, header=header, index=False)
+    try:
+        output_dir = os.path.dirname(OUTPUT_PATH)
+        if output_dir and not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+        file_exists = os.path.exists(OUTPUT_PATH)
+        df_row = pd.DataFrame([result])
+        mode = 'a' if file_exists else 'w'
+        header = not file_exists
+        df_row.to_csv(OUTPUT_PATH, mode=mode, header=header, index=False)
+    except Exception as e:
+        print(f"[ERROR] 결과 저장 실패: {OUTPUT_PATH} ({e})")
 
 # 이미지별 병렬 처리
 image_list = df['image_name'].tolist()
 with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
     futures = {executor.submit(analyze_image, image): image for image in image_list}
-    completed = 0
     for future in as_completed(futures):
         result = future.result()
-        with results_lock:
-            results.append(result)
-            save_partial_result_row(result)  # 각 결과를 개별적으로 바로 저장
-        completed += 1
+        save_partial_result_row(result)  # 각 결과를 개별적으로 바로 저장
+        print(f"[INFO] {result['image']} 탐지 완료.")
 
 print("\n탐지 완료! 결과는 ../data/targets_detected.csv에 저장되었습니다.")
