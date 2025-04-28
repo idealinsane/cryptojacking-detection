@@ -5,11 +5,13 @@ import yara
 import shutil
 from concurrent.futures import ProcessPoolExecutor, as_completed
 import requests
+from threading import Lock
 
 # 경로 설정
 CSV_PATH = "../data/targets.csv"
 YARA_RULE_PATH = "../rules/mining_rules.yar"
 EXTRACT_DIR = "../data/extracted_images"
+OUTPUT_PATH = "../data/targets_detected.csv"
 
 # Docker Hub에서 가장 최근 태그 조회 함수
 def get_latest_tag(image_name):
@@ -36,6 +38,8 @@ def get_latest_tag(image_name):
 # CSV 읽기
 df = pd.read_csv(CSV_PATH)
 results = []
+results_lock = Lock()
+SAVE_INTERVAL = 10  # 10개마다 중간 저장
 
 # 각 이미지별 전체 분석 함수
 def analyze_image(image):
@@ -137,16 +141,25 @@ def analyze_image(image):
     return image_result
 
 # 이미지별 병렬 처리
+def save_partial_results():
+    with results_lock:
+        result_df = pd.DataFrame(results)
+        merged = df.merge(result_df, left_on="image_name", right_on="image")
+        merged.to_csv(OUTPUT_PATH, index=False)
+
 image_list = df['image_name'].tolist()
 with ProcessPoolExecutor() as executor:
     futures = [executor.submit(analyze_image, image) for image in image_list]
+    completed = 0
     for future in as_completed(futures):
         result = future.result()
-        results.append(result)
+        with results_lock:
+            results.append(result)
+            completed += 1
+            if completed % SAVE_INTERVAL == 0:
+                save_partial_results()
 
-# 결과 CSV로 저장
-result_df = pd.DataFrame(results)
-merged = df.merge(result_df, left_on="image_name", right_on="image")
-merged.to_csv("../data/targets_detected.csv", index=False)
+# 마지막 저장
+save_partial_results()
 
 print("\n탐지 완료! 결과는 ../data/targets_detected.csv에 저장되었습니다.")
