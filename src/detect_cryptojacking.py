@@ -38,7 +38,7 @@ def get_latest_tag(image_name):
 df = pd.read_csv(CSV_PATH)
 
 # cdhowie/rocket.chat부터 분석 시작
-start_idx = df[df['image_name'] == 'cdhowie/rocket.chat'].index[0]
+start_idx = df[df['image_name'] == 'cecd/postgres'].index[0]
 image_list = df['image_name'].tolist()[start_idx:]
 
 results = []
@@ -49,9 +49,9 @@ def analyze_image(image):
     print(f"\n[분석 중] {image}")
     image_result = {
         "image": image,
-        "yara_detected": False,
+        "yara_detected": None,
         "detected_rules": "",
-        "is_cryptojacking": False
+        "is_cryptojacking": None
     }
     # 이미지명/태그 분리
     if ':' in image:
@@ -145,7 +145,7 @@ def analyze_image(image):
     except Exception as e:
         print(f"[WARNING] 추출 디렉토리 삭제 실패: {extract_path} ({e})")
     try:
-        rmi_cmd = ["docker", "rmi", image_with_tag]
+        rmi_cmd = ["docker", "rmi", "-f", image_with_tag]
         subprocess.run(rmi_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     except Exception as e:
         print(f"[WARNING] 도커 이미지 삭제 실패: {image_with_tag} ({e})")
