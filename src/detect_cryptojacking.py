@@ -36,6 +36,11 @@ def get_latest_tag(image_name):
 
 # CSV 읽기
 df = pd.read_csv(CSV_PATH)
+
+# cdhowie/rocket.chat부터 분석 시작
+start_idx = df[df['image_name'] == 'cdhowie/rocket.chat'].index[0]
+image_list = df['image_name'].tolist()[start_idx:]
+
 results = []
 MAX_WORKERS = 4  # 동시에 실행할 병렬 프로세스 개수 제한 (시스템 상황에 맞게 조정)
 
@@ -161,7 +166,6 @@ def save_partial_result_row(result):
         print(f"[ERROR] 결과 저장 실패: {OUTPUT_PATH} ({e})")
 
 # 이미지별 병렬 처리
-image_list = df['image_name'].tolist()
 with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
     futures = {executor.submit(analyze_image, image): image for image in image_list}
     for future in as_completed(futures):
