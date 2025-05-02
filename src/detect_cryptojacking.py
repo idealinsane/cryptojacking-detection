@@ -145,8 +145,21 @@ def analyze_image(image):
     except Exception as e:
         print(f"[WARNING] 추출 디렉토리 삭제 실패: {extract_path} ({e})")
     try:
+        # 이미지가 존재하는지 확인
+        inspect_cmd = ["docker", "inspect", image_with_tag]
+        inspect_result = subprocess.run(inspect_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        
+        if inspect_result.returncode != 0:
+            print(f"[WARNING] 이미지가 존재하지 않아 삭제를 건너뜁니다: {image_with_tag}")
+            return image_result
+            
+        # 이미지 삭제 시도
         rmi_cmd = ["docker", "rmi", "-f", image_with_tag]
-        subprocess.run(rmi_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        rmi_result = subprocess.run(rmi_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if rmi_result.returncode != 0 and "Untagged" in rmi_result.stderr.decode():
+            # 태그가 해제된 경우, untagged 이미지 삭제
+            prune_cmd = ["docker", "image", "prune", "-f"]
+            subprocess.run(prune_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     except Exception as e:
         print(f"[WARNING] 도커 이미지 삭제 실패: {image_with_tag} ({e})")
     return image_result
