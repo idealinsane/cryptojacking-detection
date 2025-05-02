@@ -42,7 +42,7 @@ start_idx = df[df['image_name'] == 'cecd/postgres'].index[0]
 image_list = df['image_name'].tolist()[start_idx:]
 
 results = []
-MAX_WORKERS = 4  # 동시에 실행할 병렬 프로세스 개수 제한 (시스템 상황에 맞게 조정)
+MAX_WORKERS = 1  # 동시에 실행할 병렬 프로세스 개수 제한 (시스템 상황에 맞게 조정)
 
 # 각 이미지별 전체 분석 함수
 def analyze_image(image):
@@ -178,12 +178,45 @@ def save_partial_result_row(result):
     except Exception as e:
         print(f"[ERROR] 결과 저장 실패: {OUTPUT_PATH} ({e})")
 
-# 이미지별 병렬 처리
-with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
-    futures = {executor.submit(analyze_image, image): image for image in image_list}
-    for future in as_completed(futures):
-        result = future.result()
-        save_partial_result_row(result)  # 각 결과를 개별적으로 바로 저장
-        print(f"[INFO] {result['image']} 탐지 완료.")
+# 배치 처리 (4개 이미지씩 처리)
+batch_size = 4
+for i in range(0, len(image_list), batch_size):
+    batch_images = image_list[i:i + batch_size]
+    print(f"\n[배치 {i//batch_size + 1}/{len(image_list)//batch_size + 1} 시작]")
+    
+    # 현재 배치의 이미지 분석
+    with ProcessPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        futures = {executor.submit(analyze_image, image): image for image in batch_images}
+        for future in as_completed(futures):
+            result = future.result()
+            save_partial_result_row(result)  # 각 결과를 개별적으로 바로 저장
+            print(f"[INFO] {result['image']} 탐지 완료.")
+    
+    # 배치 처리 완료 후 모든 Docker 이미지 삭제
+    print("\n[Docker 이미지 정리 시작]")
+    
+    # 모든 Docker 이미지 ID 가져오기
+    images_cmd = ["docker", "images", "-q"]
+    images_result = subprocess.run(images_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    
+    if images_result.returncode != 0:
+        print(f"[ERROR] 이미지 목록 조회 실패: {images_result.stderr}")
+        print("[WARNING] 이미지 정리 중지")
+    else:
+        # 이미지 ID 리스트
+        image_ids = images_result.stdout.strip().split()
+        if not image_ids:
+            print("[INFO] 삭제할 이미지가 없습니다.")
+        else:
+            # 이미지 삭제 명령어 실행
+            rmi_cmd = ["docker", "rmi", "-f"] + image_ids
+            rmi_result = subprocess.run(rmi_cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            
+            if rmi_result.returncode == 0:
+                print("[INFO] 모든 Docker 이미지 삭제 완료")
+            else:
+                print(f"[WARNING] 이미지 삭제 중 오류 발생: {rmi_result.stderr}")
+    
+    print("[Docker 이미지 정리 완료]")
 
-print("\n탐지 완료! 결과는 ../data/targets_detected.csv에 저장되었습니다.")
+print("\n전체 탐지 완료! 결과는 ../data/targets_detected.csv에 저장되었습니다.")
